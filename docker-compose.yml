@@ -1,5 +1,5 @@
 web:
-  build: .
+  image: unnamed-idea/unnamed-idea.github.io
   volumes:
     - .:/src
   ports:

@@ -16,40 +16,32 @@
   };
 
   var picasaUrlIdRegex = new RegExp("http://picasaweb.google.com/data/entry/base/user/(\\d.+?)/albumid/(\\d.+?)\\?alt=json-in-script&hl=en_US");
-  var googlePlusAlbumUrlBase = "https://plus.google.com/photos/+YevgeniyBrikman/albums/";
+  var googlePlusAlbumUrlBase = "https://plus.google.com/100257541738467946513/albums";
 
-  var getAlbumUrl = function(album, title) {
-    var links = album.link;
-    var htmlLink = _.find(links, function(link) { return link.type === "text/html"; });
-    if (htmlLink) {
-      return htmlLink.href;
+  var convertPicassaToGooglePlusUrl = function(album, title) {
+    var id = album.id.$t;
+    var match = id.match(picasaUrlIdRegex);
+    if (match) {
+      var albumId = match[2];
+      return googlePlusAlbumUrlBase + albumId;
     } else {
-      log("Unable to get URL for album with title " + title);
+      log("Unable to convert URL for album with id " + id + " and title " + title);
     }
   };
 
-  var titlesOfAlbumsToSkip = [
-    "Scrapbook Photos",
-    "Profile Photos",
-    "Photos from posts"
-  ];
-
-  // e.g. 03/04/16
-  var dateRegex1 = new RegExp("\\d\\d?/\\d\\d?/\\d\\d");
-  // e.g. 03-04-16
-  var dateRegex2 = new RegExp("\\d\\d?-\\d\\d?-\\d\\d");
+  var titlesOfAlbumsToSkip = ["2015-03-28", "Scrapbook Photos", "Profile Photos"];
 
   var showAlbums = function(albums) {
     var albumData = _.map(albums.feed.entry, function(album) {
       var title = truncate(album.title.$t, 32);
       var thumbnail = album.media$group.media$thumbnail[0].url;
-      var url = getAlbumUrl(album, title);
+      var url = convertPicassaToGooglePlusUrl(album, title);
 
       return {title: title, thumbnail: thumbnail, url: url};
     });
 
     var filteredAlbumData = _.reject(albumData, function(album) {
-      return _.contains(titlesOfAlbumsToSkip, album.title) || dateRegex1.test(album.title) || dateRegex2.test(album.title);
+      return _.contains(titlesOfAlbumsToSkip, album.title);
     });
 
     var template = _.template($('#albums-template').html());

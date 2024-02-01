@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Yevgeniy Brikman: Speaking"
+title: "Talha KORKMAZ: Speaking"
 redirect_from: "/talks"
 header_title: Speaking
 include_header: speaking_header.html
@@ -11,12 +11,8 @@ nav_item: speaking
   <div class="border-bottom border-light-gray mt4 mb4 pb3 circle-line">
     <a href="{{ talk.links | map: 'url' | first }}" target="_blank" name="{{ talk.name | downcase | replace:' ','-' | remove:',' }}">
       <h2>{{ talk.name }}</h2>
-    </a>
-    {% if talk.embed_url %}
-      {% include iframe.html url=talk.embed_url wrapper_style=talk.wrapper_style %}
-    {% else %}
-      <a href="{{ talk.thumbnail_url }}" target="_blank" rel="noopener">{% include image.html path=talk.thumbnail_path alt=talk.name %}</a>
-    {% endif %}
+    </a>  
+    {% include iframe.html url=talk.embed_url %}
     <p>
       {{ talk.description }}
     </p>
@@ -32,3 +28,35 @@ nav_item: speaking
     </p>    
   </div>
 {% endfor %}
+
+  <p>
+  <h2> Üniversitelerde veri bilimi üzerine söyleşiler </h2>
+  <p>
+
+  Veri bilimi ile değer üretilebilecek alanların kestirimi, y.zeka metotlarının çalışma prensipleri, endüstride veri bilimi alanında karşılaştığımız zorluklar gibi
+  konular üzerine çeşitli kurum ve üniversitelerde söyleşi ve seminerlere katılmaktayım.
+  </p>
+
+  <div class="row">
+
+    <div class="column">
+
+    <img src="/assets/img/speech/0.jpeg" width="50%" align="right"  />
+    </div>
+    <div class="column">
+
+    <img src="/assets/img/speech/1.jpeg" width="50%" align="right"/>
+    </div>
+    <div class="column">
+
+    <img src="/assets/img/speech/2.jpeg" width="50%" align="left" />
+  </div>
+      <div class="column">
+
+    <img src="/assets/img/speech/3.jpeg"  width="40%" align="center" />
+
+  </div>
+
+  </div>
+
+  

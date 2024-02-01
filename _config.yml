@@ -1,4 +1,5 @@
 # Website settings
+baseurl: "/"
 url: "http://unnamed-idea.github.io"
 
 # Internal nav
@@ -7,7 +8,7 @@ nav:
     writing: "/writing"
     speaking: "/speaking"
     projects: "/projects"
-    photos: "https://www.flickr.com/photos/brikis98/albums/"
+    photos: "/photos"
   writing:
     all: "/writing"
     popular: "/writing/popular"
@@ -15,59 +16,51 @@ nav:
     rss: "/feed.xml"
 
 # Bio settings
-name: "Yevgeniy Brikman"
-description: "The home page of Yevgeniy (Jim) Brikman, co-founder of Gruntwork, author of &quot;Hello, Startup&quot; and &quot;Terraform: Up & Running&quot;, and software engineer at LinkedIn, TripAdvisor, Cisco Systems, and Thomson Financial."
-thumbnail_path: "profile-photos/yevgeniy-brikman-medium.jpg"
-bitcoin_address: "1G8qEUVUS8BBSwSWNM4EWR622vUpGtee66"
-hello_startup_url: "https://www.hello-startup.net/"
-website_repo_url: "https://github.com/brikis98/yevgeniy-brikman-homepage"
-atomic_squirrel_url: "https://www.atomic-squirrel.net/"
-gruntwork_url: "https://www.gruntwork.io/"
-terraform_up_and_running_url: "https://www.terraformupandrunning.com/"
-terraform_up_and_running_code_url: "https://github.com/brikis98/terraform-up-and-running-code"
+name: "talha korkmaz"
+slogan: "applied data science, positive psychology and whatnot"
+description: "My personal blog on which I share my thoughts and notes."
+thumbnail_path: "profile-photos/blog-author-medium.jpg"
+website_repo_url: "https://github.com/unnamed-idea/unnamed-idea.github.io"
 
 # URLs
 contact_urls:
-  twitter:
-    url: "https://twitter.com/brikis98"
-    label: "Twitter"
-    icon: "twitter-square"
-    username: "@brikis98"
+  
   linkedin:
-    url: "https://www.linkedin.com/in/jbrikman"
+    url: "https://www.linkedin.com/in/talha-korkmaz-76b7346a/"
     label: "LinkedIn"
     icon: "linkedin-square"
-  facebook:
-    url: "https://www.facebook.com/brikis98"
-    label: "Facebook"
-    icon: "facebook-square"
-  slideshare:
-    url: "https://www.slideshare.net/brikis98"
-    label: "SlideShare"
-    icon: "slideshare"
   github:
-    url: "https://github.com/brikis98/"
+    url: "https://github.com/unnamed-idea"
     label: "GitHub"
     icon: "github-square"
   email:
-    url: "mailto:jim@ybrikman.com"
+    url: "mailto:mtk991@gmail.com"
     label: "Email"
-    value: "jim@ybrikman.com"
+    value: "mtk991@gmail.com"
     icon: "envelope-square"
+  twitter:
+    url: "https://twitter.com/unnamedidea"
+    label: "Twitter"
+    icon: "twitter-square"
+    username: "@unnamedidea"
+  gitlab:
+    url: "https://gitlab.com/mtk991"
+    label: "GitLab"
+    icon: "github-square"
 
 # Jekyll build settings
 paginate: 10
 paginate_path: "/writing/page:num"
-permalink: "/writing/:year/:month/:day/:title/"
+permalink: "/writing/:year/:month/:day/:title"
 sass:
   sass_dir: "/assets/css"
   style: :compressed
 highlighter: rouge
-timezone: 'America/Los_Angeles'
-repository: brikis98/yevgeniy-brikman-homepage
+timezone: 'Europe/Istanbul'
 
 # Plugins (GitHub Pages only support a few)
 gems:
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-paginate
+markdown: kramdown 
