@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "priming"
+title: "Koşullama (priming)"
 tags:
 - psychology
 - social psychology
