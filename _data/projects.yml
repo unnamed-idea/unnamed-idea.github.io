@@ -10,3 +10,12 @@
 #     Project description goes here.
 #   url: "http://www.projectname.com"
 #   image: "projectlogo.png"
+
+
+- name: SumGPT
+  url: https://github.com/unnamed-idea/sumgpt/tree/main
+  image: sumgpt.png
+  description: >
+    A character-level decoder-only transformer ("SumGPT") that learns to perform
+    decimal summation from string expressions and is designed to study attention stability,
+    hallucinations, and generalization behavior for safety critical applications of attention based systems.
